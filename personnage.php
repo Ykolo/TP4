@@ -41,11 +41,11 @@ class Personnage
     public function __setVie($vie){
         $this->vie = $vie;
     }
-    public function attaque(Personnage $cible){
+    public function attaque($cible){
         $cible->vie -= $this->atk;
         $this->empecher_negatif($cible);
     }
-    private function empecher_negatif(Personnage $cible){
+    private function empecher_negatif($cible){
         if($cible->vie < 0){
             $cible->vie = 0;
         }
